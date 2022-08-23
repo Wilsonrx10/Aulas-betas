@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map filter e reduce</title>
+</head>
+<body>
+<script>
+
+const precos = [
+"Crédito",
+"R$ 400",
+"R$ 100",
+"Conta a pagar",
+"R$ 500",
+"R$ 400"
+]
+
+let total = null
+
+// Arrray Filter
+const precoFiltro = precos.filter((preco) => preco.includes("R$"));
+
+// Arrray Map 
+const precosNumeros = precoFiltro.map((preco)=> {
+return Number(preco.replace("R$",""));
+})
+
+precosNumeros.forEach(preco => {
+total += preco;
+});
+
+console.log(total);
+console.log(precosNumeros);
+
+// Array Reduce 
+const totalItems = precosNumeros.reduce((cc, item)=> cc + item);
+
+console.log(totalItems);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest e Spread</title>
+</head>
+<body>
+   <h1></h1>
+<script>
+// Fetch GET 
+const requisicao = fetch("http://economia.awesomeapi.com.br/json/all").then((response)=>{
+return response.json()
+}).then(jsonBody => {
+console.log(jsonBody)
+})
+
+console.log(requisicao)
+
+
+// Fetch POST 
+const usuario = {
+name:"Wilson",
+apelido: "Manuel",
+idade: 18
+}
+
+fetch("http://www.apifake.com/users/",{
+method:"POST",
+headers:{
+"content-type": "application/json"
+},
+body:JSON.stringify(usuario)
+})
+</script>
+</body>
+</html>

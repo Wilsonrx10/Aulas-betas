@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+    <style>
+    .active {
+    background-color: red;
+    }
+    </style>
+</head>
+<body>
+<nav class="menu">Menu principal</nav>
+<script>
+class Menu {
+    constructor(menu) {
+    this.menuElement = document.querySelector(menu)
+    this.activeClass = "active"
+    }
+
+    AddActiveEvent() {
+    this.menuElement.addEventListener("click", (event)=> {
+    event.target.classList.add(this.activeClass) 
+    console.log(this)
+    })
+    }
+}   
+const menu = new Menu(".menu");
+menu.AddActiveEvent();
+</script>
+</body>
+</html>

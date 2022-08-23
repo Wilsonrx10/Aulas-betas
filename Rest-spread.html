@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest e Spread</title>
+</head>
+<body>
+    <ul>
+       <li>item 1</li>
+       <li>item 2</li>
+       <li>item 3</li>
+    </ul>
+<script>
+// Lógica do Rest
+function showlist(empresa, ...cliente) {
+console.log(empresa)
+console.log(cliente)
+}
+showlist("Spread","Wilson","Manuel",20);
+// Lógica do Spread
+const numeros = [12,10,29,32]
+console.log(Math.max(...numeros));
+
+const element = Array.from(document.querySelectorAll("li"));
+
+[...element].map(element => {
+console.log(element) 
+});
+
+// Clonar um objecto 
+
+const carro = {
+    nome : "Wilson",
+    idade : 20
+}
+
+const carros = {...carro, profissao : "Programador"}
+
+console.log(carros);
+
+</script>
+</body>
+</html>
